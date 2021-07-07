@@ -22,12 +22,30 @@ public class Main
 		{
 			System.out.print(arr[j]+" ");
 		}
-
 		System.out.println(" ");
-		System.out.println("reverse of the array you entered is:");
-		for(int k=n-1; k>=0; k--)
+
+		new Main().reverseArray(arr, n);
+	}
+
+	public static void reverseArray(int arr[], int n)
+	{
+		int temp;
+		int low = 0;
+		int high = n-1;
+
+		while(low < high)
 		{
-			System.out.print(arr[k]+" ");
+			temp = arr[low];
+			arr[low] = arr[high];
+			arr[high] = temp;
+			low++;
+			high--;
+		}
+
+		System.out.println("reversed array is:");
+		for(int i=0; i<n; i++)
+		{
+			System.out.print(arr[i]+" ");
 		}
 	}
 }
